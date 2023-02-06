@@ -3,14 +3,23 @@
   "version": "0.1.0",
   "private": true,
   "type": "module",
+  "apidoc": {
+    "title": "Watchlist API",
+    "version": "0.1.0"
+  },
   "scripts": {
     "dev": "nodemon",
-    "start": "DEBUG=express-api:* node ./bin/start"
+    "start": "DEBUG=express-api:* node ./bin/start",
+    "apidoc": "apidoc -i routes/ -o apidoc/"
   },
   "dependencies": {
+    "apidoc": "^0.53.1",
+    "bcrypt": "^5.1.0",
     "debug": "~4.3.4",
     "express": "~4.18.1",
     "http-errors": "^2.0.0",
+    "mongodb": "^5.0.0",
+    "mongoose": "^6.9.0",
     "morgan": "~1.10.0"
   },
   "devDependencies": {
