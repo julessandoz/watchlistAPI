@@ -1,9 +1,9 @@
-try {
-  const dotenv = await import("dotenv");
-  dotenv.config();
-} catch (error) {
-  console.log(error);
-}
+// try {
+//   const dotenv = await import("dotenv");
+//   dotenv.config();
+// } catch (error) {
+//   console.log(error);
+// }
 
 export const databaseUrl =
   process.env.DATABASE_URL || "mongodb://127.0.0.1:27017/watchlistAPI";
