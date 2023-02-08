@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 import bcrypt from "bcrypt";
-import * as config from "../config";
+import * as config from "../config.js";
 
 const Schema = mongoose.Schema;
 
@@ -8,14 +8,14 @@ const UserSchema = new Schema({
   username: {
     type: String,
     required: true,
-    unique: true,
+    unique: [true, "Username is already in use"],
     minLength: [2, "Username is too short, minimum 2 characters"],
     maxLength: [10, "Username is too long, maximum 10 characters"],
   },
   email: {
     type: String,
     required: true,
-    unique: true,
+    unique: [true, "Email is already in use"],
     match: [
       /^\w+([\.-]?\w+)*@[a-zA-Z]+([\.-]?[a-zA-Z]+)*(\.[a-zA-Z]{2,3})+$/,
       "Please enter a valid email address",
